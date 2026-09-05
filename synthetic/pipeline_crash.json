@@ -1,0 +1,21 @@
+{
+  "name": "crash-demo",
+  "steps": [
+    {
+      "tool": "ок-первый",
+      "cmd": ["python3", "/srv/office/2364/work/mad-tools/loom/synthetic/подопытный_ок.py"],
+      "config": {"target": "target-alpha"},
+      "wire": {"in": "инструмент.цель"}
+    },
+    {
+      "tool": "падающий",
+      "cmd": ["python3", "/srv/office/2364/work/mad-tools/loom/synthetic/подопытный_падение.py"],
+      "wire": {"in": "инструмент.цель"}
+    },
+    {
+      "tool": "ок-после-падения",
+      "cmd": ["python3", "/srv/office/2364/work/mad-tools/loom/synthetic/подопытный_ок.py"],
+      "config": {"target": "target-delta"}
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "инструмент": {
+    "имя": "loom",
+    "цель": "broken-demo"
+  },
+  "verdict": "ПРОВАЛ",
+  "worst_rc": 1,
+  "шагов": 2,
+  "дропнуто": 0,
+  "провалов": 1,
+  "не_состоялось": 0,
+  "findings": [
+    {
+      "вердикт": "ПРОВАЛ",
+      "вектор": "synthetic-hole",
+      "почему": "нарочная дыра для доказательства, что loom ловит провал",
+      "шаг": 1,
+      "инструмент": "дырявый"
+    }
+  ],
+  "steps": [
+    {
+      "tool": "ок-первый",
+      "cmd": [
+        "python3",
+        "/srv/office/2364/work/mad-tools/loom/synthetic/подопытный_ок.py",
+        "--target",
+        "target-alpha",
+        "--json",
+        "/tmp/loom_8bo94l47.json"
+      ],
+      "wired_in": {},
+      "rc": 0,
+      "dropped": false,
+      "report_present": true,
+      "verdict": "ПРОШЁЛ",
+      "findings_count": 0
+    },
+    {
+      "tool": "дырявый",
+      "cmd": [
+        "python3",
+        "/srv/office/2364/work/mad-tools/loom/synthetic/подопытный_провал.py",
+        "--target",
+        "target-gamma",
+        "--in",
+        "target-alpha",
+        "--json",
+        "/tmp/loom_bt9ju76s.json"
+      ],
+      "wired_in": {
+        "in": "target-alpha"
+      },
+      "rc": 1,
+      "dropped": false,
+      "report_present": true,
+      "verdict": "ПРОВАЛ",
+      "findings_count": 1
+    }
+  ],
+  "finding_organizer": {
+    "доступен": true,
+    "занесено_id": [
+      "T-040DCC86F2"
+    ]
+  },
+  "почему": "шагов 2, провалов 1, дропнуто 0; worst rc=1",
+  "note": "loom — рама конвейера: подпроцессы + файловая связь wire + агрегат находок. Вердикт ставит код (worst rc), не модель."
+}

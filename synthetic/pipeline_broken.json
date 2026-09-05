@@ -1,0 +1,16 @@
+{
+  "name": "broken-demo",
+  "steps": [
+    {
+      "tool": "ок-первый",
+      "cmd": ["python3", "/srv/office/2364/work/mad-tools/loom/synthetic/подопытный_ок.py"],
+      "config": {"target": "target-alpha"},
+      "wire": {"in": "инструмент.цель"}
+    },
+    {
+      "tool": "дырявый",
+      "cmd": ["python3", "/srv/office/2364/work/mad-tools/loom/synthetic/подопытный_провал.py"],
+      "config": {"target": "target-gamma"}
+    }
+  ]
+}

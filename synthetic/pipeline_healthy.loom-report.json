@@ -1,0 +1,59 @@
+{
+  "инструмент": {
+    "имя": "loom",
+    "цель": "healthy-demo"
+  },
+  "verdict": "ПРОШЁЛ",
+  "worst_rc": 0,
+  "шагов": 2,
+  "дропнуто": 0,
+  "провалов": 0,
+  "не_состоялось": 0,
+  "findings": [],
+  "steps": [
+    {
+      "tool": "ок-первый",
+      "cmd": [
+        "python3",
+        "/srv/office/2364/work/mad-tools/loom/synthetic/подопытный_ок.py",
+        "--target",
+        "target-alpha",
+        "--json",
+        "/tmp/loom_jcuqmjd1.json"
+      ],
+      "wired_in": {},
+      "rc": 0,
+      "dropped": false,
+      "report_present": true,
+      "verdict": "ПРОШЁЛ",
+      "findings_count": 0
+    },
+    {
+      "tool": "ок-второй",
+      "cmd": [
+        "python3",
+        "/srv/office/2364/work/mad-tools/loom/synthetic/подопытный_ок.py",
+        "--target",
+        "target-beta",
+        "--in",
+        "target-alpha",
+        "--json",
+        "/tmp/loom_ns6kxhcp.json"
+      ],
+      "wired_in": {
+        "in": "target-alpha"
+      },
+      "rc": 0,
+      "dropped": false,
+      "report_present": true,
+      "verdict": "ПРОШЁЛ",
+      "findings_count": 0
+    }
+  ],
+  "finding_organizer": {
+    "доступен": true,
+    "занесено_id": []
+  },
+  "почему": "шагов 2, провалов 0, дропнуто 0; worst rc=0",
+  "note": "loom — рама конвейера: подпроцессы + файловая связь wire + агрегат находок. Вердикт ставит код (worst rc), не модель."
+}
